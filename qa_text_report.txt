@@ -1,0 +1,59 @@
+1 round-trip     : 13458 / 13458 strings match the shipped BIN
+2 coverage       : 13481 JP messages, 23 untranslated
+    0x00000/0     0|1|2|3|4|5|6|7|8|9
+    0x00000/56    /
+    0x00000/128   LV
+    0x00000/138   <88>
+    0x00000/139   ~
+    0x00000/140   (
+    0x00000/141   )
+    0x00000/142   /
+    0x00000/143   %
+    0x00000/145   Exp
+    0x00000/147   -
+    0x00000/149   +
+    0x00000/152   0
+    0x00000/240   BGM
+    0x00000/241   S<g400>E
+    0x00000/242   C<g400>V
+    0x00000/251   LV
+    0x00000/253   /
+    0x00000/304   ?????????????????
+    0x05000/258   %
+    0x07000/21    「
+    0x07000/22    」
+    0x07000/49    /
+3 leftovers      : 0 Korean rows still containing kana/kanji
+4 layout         : 0 over the line limit, 59 messages need more boxes than the original
+5 control codes  : 150 JP messages carry raw <xx> codes that the Korean cannot reproduce
+    87                 x133   e.g. 0x00000/18  武器<87>技
+    8b,8c              x11    e.g. 0x04000/96  第02話<8b>勇太とデッカード<8c>
+    18                 x6     e.g. 0x04000/176  毛針|<18><g204>リモコン下駄|鬼太郎憑き|チャンチャンコ|熱気|指鉄胞
+6 glossary       :
+    키타로            키타로=1503  기타로=1   << mixed
+    눈알아버지          18
+    고양이소녀          147
+    쥐인간            169
+    모래뿌리기할멈        15
+    아기울음영감         33
+    이탄모멘           54
+    누리카베           83
+    누라리횬           67
+    백베어드           21
+    드라큘라           171
+    론론             44
+    고곤             고곤=43  고르곤=12   << mixed
+    카타키라우와         41
+    라 세느           32
+    기가             365
+    우귀             89
+    요괴             977
+7 budget         :
+    0x71000   17883 /  18432 bytes  (97%)
+    0x09000   51233 /  53248 bytes  (96%)
+    0x4b000   17611 /  18432 bytes  (96%)
+    0x37800   13674 /  14336 bytes  (95%)
+    0xac800    9754 /  10240 bytes  (95%)
+    0xc5000    7363 /   7755 bytes  (95%)
+
+RESULT: no blocking issues

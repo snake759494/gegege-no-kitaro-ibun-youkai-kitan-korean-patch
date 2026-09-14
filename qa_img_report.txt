@@ -1,0 +1,77 @@
+== D_SYS_ko.BIN
+1 size      : 6770688 vs 6770688  OK
+   changed  : 54664 byte runs, 429349 bytes total
+2 structure : 0 changes touching a header/table/palette  OK
+3 scope     : 0 changes outside any sprite  OK
+   sprites   : 51 packs, 99 sprites rewritten
+     0x040800 : [31, 32, 33, 34, 35, 36, 37, 40, 41, 42, 43, 44, 45, 48, 49, 62, 63, 64, 65, 66, 67, 68, 69, 78, 79, 82]
+     0x096800 : [1, 2]
+     0x0a6000 : [0, 1, 2, 3, 4, 5]
+     0x0bf800 : [4, 5, 6]
+     0x0d0000 : [0, 1, 2, 3, 4, 5]
+     0x0d6000 : [0, 1, 2, 3, 4, 5, 6, 7]
+     0x147800 : [0, 2, 3, 5]
+     0x484800 : [0]
+     0x489000 : [0]
+     0x48d800 : [0]
+     0x492000 : [0]
+     0x496000 : [0]
+     0x49a000 : [0]
+     0x49e000 : [0]
+     0x4a2000 : [0]
+     0x4a6000 : [0]
+     0x4a9800 : [0]
+     0x4ad000 : [0]
+     0x4b1000 : [0]
+     0x4b4000 : [0]
+     0x4b8000 : [0]
+     0x4bc000 : [0]
+     0x4be800 : [0]
+     0x4c2800 : [0]
+     0x4c6000 : [0]
+     0x4ca000 : [0]
+     0x4cd000 : [0]
+     0x4cf000 : [0]
+     0x4d3000 : [0]
+     0x4d5000 : [0]
+     0x4d9000 : [0]
+     0x4dd000 : [0]
+     0x4df800 : [0]
+     0x4e3800 : [0]
+     0x4e7800 : [0]
+     0x4eb800 : [0]
+     0x4ee800 : [0]
+     0x4f2800 : [0]
+     0x4f6000 : [0]
+     0x4f9800 : [0]
+     0x4fc000 : [0]
+     0x4fe000 : [0]
+     0x502000 : [0]
+     0x504800 : [0]
+     0x508800 : [0]
+     0x50a800 : [0]
+     0x50d800 : [0]
+     0x510000 : [0]
+     0x512800 : [0]
+     0x516800 : [0]
+     0x51a800 : [0]
+4 contrast  : 0 sprites look flat or unchanged  OK
+
+== D_BG_ko.BIN
+1 size      : 47686680 vs 47686680  OK
+   changed  : 10542 byte runs, 179788 bytes total
+2 structure : 0 changes touching a header/table/palette  OK
+3 scope     : 0 changes outside any sprite  OK
+   sprites   : 9 packs, 9 sprites rewritten
+     0x1890800 : [0]
+     0x18dc000 : [0]
+     0x1927800 : [0]
+     0x1973000 : [0]
+     0x19be800 : [0]
+     0x1b38000 : [0]
+     0x1b83800 : [0]
+     0x1bcf000 : [0]
+     0x1d96800 : [0]
+4 contrast  : 0 sprites look flat or unchanged  OK
+
+RESULT: no blocking issues

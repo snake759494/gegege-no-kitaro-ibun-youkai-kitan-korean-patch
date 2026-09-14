@@ -1,0 +1,171 @@
+{
+ "repository": "snake759494/gegege-no-kitaro-ibun-youkai-kitan-korean-patch",
+ "tag": "v1.0.0",
+ "release_asset": "Kitaro_Ibun_Youkai_Kitan_PS2_KO_v1.0.0.xdelta",
+ "files": {
+  ".gitattributes": {
+   "bytes": 8,
+   "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+  },
+  ".gitignore": {
+   "bytes": 566,
+   "sha256": "d25b01bc48e76066b14fa639bff60a2afea2f9c5fca6389a50a2ae9f8e7d7e47"
+  },
+  "BUILD.md": {
+   "bytes": 5061,
+   "sha256": "db5c3fd1478472e56656e7a88b9969e5ab7969564b69579d6a4b84f7601c1946"
+  },
+  "CHANGELOG.md": {
+   "bytes": 624,
+   "sha256": "0c4004e018c8f6258c3ac6fc99c590e25b9bf9746380198f3a77e0cd1df0e00a"
+  },
+  "D_MOJI_hangul2350.map.tsv": {
+   "bytes": 44678,
+   "sha256": "df79320325abd82ae4fa5ae422096bc825f45f7d3f14c0157c597cf85b6d1867"
+  },
+  "FONT_CREDITS.md": {
+   "bytes": 922,
+   "sha256": "033cd7abc272d1ea819c229b472db4ed7d00e3609f0d37bda691b28807f2a6b3"
+  },
+  "README.md": {
+   "bytes": 9206,
+   "sha256": "8e9dbc09ad361293f6b005d60f16732d4a7ec88af8129462b9b92f7801645fd0"
+  },
+  "REVIEW.md": {
+   "bytes": 6853,
+   "sha256": "6cbefadcc7bf64d77b0dc38bab4afc210644f91a0bd5858f523d5ff4ee7df023"
+  },
+  "RIGHTS.md": {
+   "bytes": 1329,
+   "sha256": "0fa5cf24d606f5d3ea251c729f1e220f1e494757d60d0979eba45f211f8fad4c"
+  },
+  "TECHNICAL.md": {
+   "bytes": 9282,
+   "sha256": "2b94035d9d4e5381ad505b2803c73e2c7836ff131e949e4f32fcba7e9b551171"
+  },
+  "apply_release.py": {
+   "bytes": 2227,
+   "sha256": "75889426d3807407fa0b3cb6d21472bf97f12350bf17cb8fce543bf99d40b1e8"
+  },
+  "glyph_map.json": {
+   "bytes": 39143,
+   "sha256": "88ad928d235d1c913dfd1097b4b235bafc6989ce59ab1fd9b9cc4db740c0603a"
+  },
+  "qa_img_report.txt": {
+   "bytes": 2021,
+   "sha256": "9920343c2e027df8c9f53f03cb15f23dabc91b699d0c6ea59416850b7485e5b4"
+  },
+  "qa_text_report.txt": {
+   "bytes": 2087,
+   "sha256": "5b83528220726171b792741f96264be12ac5824d852cd316f4f7c28a5f3a8b11"
+  },
+  "release_notes.md": {
+   "bytes": 2281,
+   "sha256": "6b76cf3896ff3a49e54f0b548c303079f7deadc066349261cf461aab5c27c5d4"
+  },
+  "release_verification.json": {
+   "bytes": 4067,
+   "sha256": "bd1a4b29658be5138ec2583aafb6eea343849917f25190f38f08e10610dc42a1"
+  },
+  "requirements.txt": {
+   "bytes": 44,
+   "sha256": "8c18d9416d2a30775cfbe4fc7fabdf6595a0b0f953a72ff2f2965cb34c1cba58"
+  },
+  "runtime_test.md": {
+   "bytes": 2773,
+   "sha256": "c52e8580520b97800a5b7dc7e86d2036919b22ea459b300c249b34c75741f4d8"
+  },
+  "script_jp.tsv": {
+   "bytes": 1147342,
+   "sha256": "84cb72811a0a033e314d03317048d0f63746c332e0901eb12be79a7839792a02"
+  },
+  "script_ko.tsv": {
+   "bytes": 1057124,
+   "sha256": "eb93659d4220018c4a193111fb4f2d8cea2eaeceedf0d1cdba96af78cb0751ff"
+  },
+  "tools/build_iso.py": {
+   "bytes": 1488,
+   "sha256": "f3a7f4fea867152e9c00d6bb5fcc8a36c318d125c4c182ae578a1a03a2b03b6f"
+  },
+  "tools/chfont_names.py": {
+   "bytes": 2824,
+   "sha256": "9770a70d42479865a472c2f8bcc3c282fba5f6ba0dd280c0d820815a738cba2d"
+  },
+  "tools/dump_script.py": {
+   "bytes": 1817,
+   "sha256": "cd653d3da75a6f45269fcbd6cb48073acf2edef1a4e9822b087b56a76ab1c551"
+  },
+  "tools/extract_iso.py": {
+   "bytes": 1366,
+   "sha256": "f103e511becede668582bd185e0e10096a83c5d7c2d1bf62dee19b1e590e4fe3"
+  },
+  "tools/glyph_anchors.py": {
+   "bytes": 1220,
+   "sha256": "32f8569840dfde835f9abad8e345a38079d3e9ba611bf213e6454627726fbd5e"
+  },
+  "tools/glyph_map.py": {
+   "bytes": 7527,
+   "sha256": "5ab64f2c49dcac9f723767c7a3e81f63891529f6ee83936da560dce66504ede5"
+  },
+  "tools/hangul_font.py": {
+   "bytes": 5615,
+   "sha256": "96cf4ce3d78c35163ef88cd97a45b1c5c5ba82d1e1002b17f0e5b51a41596487"
+  },
+  "tools/ko_dialogue.py": {
+   "bytes": 8076,
+   "sha256": "f54e0fa619a813920a0cb569de0f2ef2c5e13f37e42e7fd5b0de9e404a00b63b"
+  },
+  "tools/ko_inject.py": {
+   "bytes": 7238,
+   "sha256": "b144eac8ca9ecf6d68220f60f881a4fec7775f75c51a0ab81e2de162d77754f4"
+  },
+  "tools/ko_nameplates.py": {
+   "bytes": 5500,
+   "sha256": "642a48dedd34ff3c68748cec12b62d68234f566da78b246404d4cefc81ab0d16"
+  },
+  "tools/ko_system.py": {
+   "bytes": 5255,
+   "sha256": "e5025169c72a1805715f7d8cde7acce54e50e44dabf606e659ef09fa51419dd4"
+  },
+  "tools/koimg.py": {
+   "bytes": 19112,
+   "sha256": "c54b7b2bd83355193c11a0fae07ce5921143a9ad3150c952c3a103e1630fafea"
+  },
+  "tools/mess_parse.py": {
+   "bytes": 1864,
+   "sha256": "a69622361d6ad860335932d2f09ab6033fa494f48a6d3f4c5da9dee2ba47e9f7"
+  },
+  "tools/mess_render.py": {
+   "bytes": 2526,
+   "sha256": "4523a0c92902f5761e92cc6537edee6b638baba98bca44b3d4c4aab6894634f7"
+  },
+  "tools/moji_font.py": {
+   "bytes": 4875,
+   "sha256": "5d5f81ad303f3e75136fc8103193458e7926ceac7acc2adedcb0c3f0500ce820"
+  },
+  "tools/patch_bg.py": {
+   "bytes": 7424,
+   "sha256": "dffa00543e723792b261b98dd7388e8ad49a2216c579999efbaaa2aea4cf0d9c"
+  },
+  "tools/patch_sys.py": {
+   "bytes": 11504,
+   "sha256": "407ab4a46604a6e06b4c98418577547a3a0748df2f6e01afb1cfb96ff142087d"
+  },
+  "tools/qa_img.py": {
+   "bytes": 5711,
+   "sha256": "93feb880b6a3bc84d61ba5cf790711bc32f623c7d0b16e68bae97a268466ec5d"
+  },
+  "tools/qa_text.py": {
+   "bytes": 8743,
+   "sha256": "67d1313707cbb0168b2f33f8db4a850464b669edefdaee41c98f51b9ee5468ce"
+  },
+  "tools/sysimg.py": {
+   "bytes": 5811,
+   "sha256": "ecc0d07540ca08e378949426ad6d18eccfe25500c8097830b096294ebce939ee"
+  },
+  "verify_publication.py": {
+   "bytes": 878,
+   "sha256": "dc77b9a020f691da7953522348954b092d80fda7cf9299c69ac8ac76b3f18eb0"
+  }
+ }
+}
