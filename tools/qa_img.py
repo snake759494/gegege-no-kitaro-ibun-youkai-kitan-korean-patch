@@ -63,6 +63,8 @@ def main():
         os.makedirs(sheet, exist_ok=True)
     fails = 0
     for src_path, dst_path in PAIRS:
+        if not os.path.exists(dst_path):
+            print(f'== {dst_path}: not built, skipped'); continue
         src, dst = get_src(src_path), open(dst_path, 'rb').read()
         name = os.path.basename(dst_path)
         print('== %s' % name)

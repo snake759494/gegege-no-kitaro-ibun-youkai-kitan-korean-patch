@@ -1,7 +1,7 @@
 {
  "repository": "snake759494/gegege-no-kitaro-ibun-youkai-kitan-korean-patch",
- "tag": "v1.0.0",
- "release_asset": "Kitaro_Ibun_Youkai_Kitan_PS2_KO_v1.0.0.xdelta",
+ "tag": "v1.0.1",
+ "release_asset": "Kitaro_Ibun_Youkai_Kitan_PS2_KO_v1.0.1.xdelta",
  "files": {
   ".gitattributes": {
    "bytes": 8,
@@ -12,68 +12,68 @@
    "sha256": "d25b01bc48e76066b14fa639bff60a2afea2f9c5fca6389a50a2ae9f8e7d7e47"
   },
   "BUILD.md": {
-   "bytes": 5061,
-   "sha256": "db5c3fd1478472e56656e7a88b9969e5ab7969564b69579d6a4b84f7601c1946"
+   "bytes": 5125,
+   "sha256": "67956e47850500576817a749a1976f24c4f6ab21802e6dafce05dbc64d7275ff"
   },
   "CHANGELOG.md": {
-   "bytes": 624,
-   "sha256": "0c4004e018c8f6258c3ac6fc99c590e25b9bf9746380198f3a77e0cd1df0e00a"
+   "bytes": 1213,
+   "sha256": "e8e743e32ae0b8bbbea3d257212c2605489a4be556cb95b0adfe636a0028fe3c"
   },
   "D_MOJI_hangul2350.map.tsv": {
    "bytes": 44678,
    "sha256": "df79320325abd82ae4fa5ae422096bc825f45f7d3f14c0157c597cf85b6d1867"
   },
   "FONT_CREDITS.md": {
-   "bytes": 922,
-   "sha256": "033cd7abc272d1ea819c229b472db4ed7d00e3609f0d37bda691b28807f2a6b3"
+   "bytes": 957,
+   "sha256": "dd2726861dd6582703b3e9f356c68597f85692e4c8257b4333990aeeb43cc2e3"
   },
   "README.md": {
-   "bytes": 9206,
-   "sha256": "8e9dbc09ad361293f6b005d60f16732d4a7ec88af8129462b9b92f7801645fd0"
+   "bytes": 9524,
+   "sha256": "3ddbd89afca81d35e72bb5a2364a882a930adfaeaff70ffa698d929a97c94547"
   },
   "REVIEW.md": {
-   "bytes": 6853,
-   "sha256": "6cbefadcc7bf64d77b0dc38bab4afc210644f91a0bd5858f523d5ff4ee7df023"
+   "bytes": 7009,
+   "sha256": "e73c6bf38c7eec49d9515a8809359c638c6a5fea3a5ecb6e9df53e39a89f86b2"
   },
   "RIGHTS.md": {
    "bytes": 1329,
    "sha256": "0fa5cf24d606f5d3ea251c729f1e220f1e494757d60d0979eba45f211f8fad4c"
   },
   "TECHNICAL.md": {
-   "bytes": 9282,
-   "sha256": "2b94035d9d4e5381ad505b2803c73e2c7836ff131e949e4f32fcba7e9b551171"
+   "bytes": 9415,
+   "sha256": "7f3cfc8cd79af01c3edb7dedc41055e2a6e915451bb63bbfe1c2f91d65171029"
   },
   "apply_release.py": {
    "bytes": 2227,
-   "sha256": "75889426d3807407fa0b3cb6d21472bf97f12350bf17cb8fce543bf99d40b1e8"
+   "sha256": "db0ba92cd015f3ebf18d767214600e908e6384230be159e1a19967092de5cd6b"
   },
   "glyph_map.json": {
    "bytes": 39143,
    "sha256": "88ad928d235d1c913dfd1097b4b235bafc6989ce59ab1fd9b9cc4db740c0603a"
   },
   "qa_img_report.txt": {
-   "bytes": 2021,
-   "sha256": "9920343c2e027df8c9f53f03cb15f23dabc91b699d0c6ea59416850b7485e5b4"
+   "bytes": 1621,
+   "sha256": "28c3cbc756c9599a07bce344a00f58f95f3bd6c128a73c86739c9f6f8eda9718"
   },
   "qa_text_report.txt": {
-   "bytes": 2087,
-   "sha256": "5b83528220726171b792741f96264be12ac5824d852cd316f4f7c28a5f3a8b11"
+   "bytes": 2146,
+   "sha256": "3cfdba36aac15d62814338a31444f289c41128e45687b7582d6e780133cf6db5"
   },
   "release_notes.md": {
-   "bytes": 2281,
-   "sha256": "6b76cf3896ff3a49e54f0b548c303079f7deadc066349261cf461aab5c27c5d4"
+   "bytes": 2633,
+   "sha256": "11c7ad7936ac8247db710e02f38655b3892558df7d42812eb3993ee9be3babde"
   },
   "release_verification.json": {
-   "bytes": 4067,
-   "sha256": "bd1a4b29658be5138ec2583aafb6eea343849917f25190f38f08e10610dc42a1"
+   "bytes": 4136,
+   "sha256": "c33c8f081ef7659e1620cb6df603fe2fe7590dfbc4535d9b1835ab2dc6998aa1"
   },
   "requirements.txt": {
    "bytes": 44,
    "sha256": "8c18d9416d2a30775cfbe4fc7fabdf6595a0b0f953a72ff2f2965cb34c1cba58"
   },
   "runtime_test.md": {
-   "bytes": 2773,
-   "sha256": "c52e8580520b97800a5b7dc7e86d2036919b22ea459b300c249b34c75741f4d8"
+   "bytes": 3781,
+   "sha256": "6cb7793d77aa85e5274408b3c3ad06f5c69ffc2c10636e476e3f667022358ce8"
   },
   "script_jp.tsv": {
    "bytes": 1147342,
@@ -152,8 +152,8 @@
    "sha256": "407ab4a46604a6e06b4c98418577547a3a0748df2f6e01afb1cfb96ff142087d"
   },
   "tools/qa_img.py": {
-   "bytes": 5711,
-   "sha256": "93feb880b6a3bc84d61ba5cf790711bc32f623c7d0b16e68bae97a268466ec5d"
+   "bytes": 5818,
+   "sha256": "eb867cc6b05a9d3399d254bb4da26855112ae66c05b4d1c29e2f6f3ebd5ab655"
   },
   "tools/qa_text.py": {
    "bytes": 8743,

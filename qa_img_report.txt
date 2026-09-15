@@ -57,21 +57,5 @@
      0x51a800 : [0]
 4 contrast  : 0 sprites look flat or unchanged  OK
 
-== D_BG_ko.BIN
-1 size      : 47686680 vs 47686680  OK
-   changed  : 10542 byte runs, 179788 bytes total
-2 structure : 0 changes touching a header/table/palette  OK
-3 scope     : 0 changes outside any sprite  OK
-   sprites   : 9 packs, 9 sprites rewritten
-     0x1890800 : [0]
-     0x18dc000 : [0]
-     0x1927800 : [0]
-     0x1973000 : [0]
-     0x19be800 : [0]
-     0x1b38000 : [0]
-     0x1b83800 : [0]
-     0x1bcf000 : [0]
-     0x1d96800 : [0]
-4 contrast  : 0 sprites look flat or unchanged  OK
-
+== D_BG_ko.BIN: not built, skipped
 RESULT: no blocking issues

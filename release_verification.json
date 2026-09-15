@@ -1,8 +1,8 @@
 {
  "repository": "snake759494/gegege-no-kitaro-ibun-youkai-kitan-korean-patch",
- "tag": "v1.0.0",
- "release_asset": "Kitaro_Ibun_Youkai_Kitan_PS2_KO_v1.0.0.xdelta",
- "built": "2026-09-10",
+ "tag": "v1.0.1",
+ "release_asset": "Kitaro_Ibun_Youkai_Kitan_PS2_KO_v1.0.1.xdelta",
+ "built": "2026-09-15",
  "source_iso": {
   "name": "Gegege no Kitarou Ibun Youkai Kitan.iso",
   "product": "SLPM-65337",
@@ -12,22 +12,22 @@
   "sha256": "89ce33d0bf65b33f1fdd9ef3bae28a9700a4b0e700199f73d45633d620ad1186"
  },
  "xdelta": {
-  "bytes": 664202,
-  "md5": "e8ff65e6d96949c130f83e3a4410129b",
-  "sha1": "abd275df94b7d43a321e05f4898dd55cf7f80c0a",
-  "sha256": "1a75d802c950f408527744d1826d6f7bbb4e6877f9a656cabcf3d36cd9533c52",
+  "bytes": 607869,
+  "md5": "5b5364593b1fa008911c9e29d8b2607c",
+  "sha1": "7068e3b6b597a86d9af692b869cf05dd2e93b333",
+  "sha256": "5109d081f24c7f042308afd13b8e6be5b811064208135c94d7f7632a2c4a17ed",
   "created_with": "xdelta 3.1.0, -e -9"
  },
  "output_iso": {
   "bytes": 2316861440,
-  "md5": "e9fe7a6aca187b99fb9a0aed5a66228e",
-  "sha1": "396bbb0ccf92348477d07339ac36e67bcc7d2124",
-  "sha256": "5f6fee80422be8ce602658b9dbce384240e932451caded9853bdac16d514b208"
+  "md5": "2cb727da57cf20b51f18bb6e8663f21c",
+  "sha1": "e9578650d14d45c8aa495aa6e051beec510e2810",
+  "sha256": "f3d7ba5be2e2718156eb09fa7a575453c829b2da9760b7a11d9ef2a08b3db3c9"
  },
  "xdelta_roundtrip": {
   "method": "xdelta -d -f -s <source> <patch> -> scratch ISO, sha1 compared with the built ISO",
   "result": "MATCH",
-  "sha1": "396bbb0ccf92348477d07339ac36e67bcc7d2124"
+  "sha1": "e9578650d14d45c8aa495aa6e051beec510e2810"
  },
  "patched_files": {
   "D_MOJI.BIN": {
@@ -44,11 +44,6 @@
    "lba": 3021,
    "bytes": 6770688,
    "replacement": "D_SYS_ko.BIN"
-  },
-  "D_BG.BIN": {
-   "lba": 56654,
-   "bytes": 47686680,
-   "replacement": "D_BG_ko.BIN"
   },
   "D_CHFONT.BIN": {
    "lba": 85908,
@@ -79,11 +74,6 @@
     "rebuilt_sha256": "0aed6abe18f8a7406865d74a364d7c5cbab9e086512a5dfd1c99e8c7564d65c0",
     "shipped_sha256": "0aed6abe18f8a7406865d74a364d7c5cbab9e086512a5dfd1c99e8c7564d65c0",
     "match": true
-   },
-   "D_BG_ko.BIN": {
-    "rebuilt_sha256": "c6ceaec85378f00dba113de1d0ae5bae1bea570a346333deb9f1320cc0736cc3",
-    "shipped_sha256": "c6ceaec85378f00dba113de1d0ae5bae1bea570a346333deb9f1320cc0736cc3",
-    "match": true
    }
   },
   "all_match": true
@@ -105,7 +95,7 @@
   "result": "RESULT: no blocking issues",
   "summary": {
    "D_SYS_ko.BIN": "51 packs, 99 sprites rewritten; header/table/palette untouched",
-   "D_BG_ko.BIN": "9 packs, 9 sprites rewritten; header/table/palette untouched"
+   "D_BG.BIN": "not patched since v1.0.1"
   }
  },
  "proofread": {
@@ -115,5 +105,11 @@
  },
  "emulator": {
   "note": "See runtime_test.md. The final build was handed to the user for PCSX2 verification; no in-game result of the final build is recorded here."
+ },
+ "v1.0.1_fix": {
+  "report": "game stops after opening a door in the prologue exploration room (no dialogue on screen)",
+  "bisect": "D_MESS restored (A): not tested; D_SYS+D_BG restored (B): OK; D_BG restored only (C): OK -> D_BG_ko.BIN is the cause",
+  "action": "D_BG.BIN left original; all 9 patched menu backgrounds dropped",
+  "v1.0.0_output_sha256": "5f6fee80422be8ce602658b9dbce384240e932451caded9853bdac16d514b208"
  }
 }
