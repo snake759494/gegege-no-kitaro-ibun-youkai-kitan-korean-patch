@@ -6,7 +6,8 @@ Container layout (verified on D_SYS.BIN):
     u16 magic (0x5f51 or 0x5f71), u16 count, u32 dataStart, u32 pad
     count * 16-byte records at +8:  u32 A, u16 w, u16 h, u16 w/2, u16 h/2, u32 nextOff
     256 * u16 RGBA5551 palette      (right before dataStart)
-    pixel data, 8bpp, linear, images stored back-to-back from dataStart
+    pixel data, linear (0x5f51: 8bpp, 0x5f71: 4bpp)
+    A 4bpp container may still have a 256-entry palette.
 
 The record's u32 offset field is the offset of the *following* image, so
 image i lives at dataStart when i == 0 and at record[i-1].off otherwise.
@@ -42,14 +43,25 @@ class Pack:
         self.paloff = base + 8 + self.count * 16
         palbytes = self.dstart - (8 + self.count * 16)
         if palbytes == 512:
-            self.bpp, ncol = 8, 256
+            ncol = 256
         elif palbytes == 32:
-            self.bpp, ncol = 4, 16
+            ncol = 16
         else:
             raise ValueError('odd palette size %d at %#x' % (palbytes, base))
+        # 0x5f71 is 4bpp even when a 256-entry CLUT is stored. D_SYS at
+        # 0x92000 has this form; inferring 8bpp from CLUT size reads into
+        # the next resource at 0x96800.
+        self.bpp = 4 if magic == 0x5f71 else 8
+        if self.bpp == 8 and ncol != 256:
+            raise ValueError('8bpp sprite needs 256 palette entries')
         self.sprites = []
         for i, (A, w, h, _hw, _hh, nxt) in enumerate(recs):
             off = self.dstart if i == 0 else recs[i - 1][5]
+            length = (w * h * self.bpp + 7) // 8
+            if not w or not h or off < self.dstart or base + off + length > len(data):
+                raise ValueError('invalid sprite bounds at %#x/%d' % (base, i))
+            if i + 1 < self.count and off + length > nxt:
+                raise ValueError('overlapping sprite records at %#x/%d' % (base, i))
             self.sprites.append(Sprite(i, off, w, h, A))
         self.palette = [struct.unpack_from('<H', data, self.paloff + i * 2)[0]
                         for i in range(ncol)]
@@ -92,6 +104,8 @@ class Pack:
         s = self.sprites[i]
         if len(idx) != s.size:
             raise ValueError('sprite %d expects %d px, got %d' % (i, s.size, len(idx)))
+        if any(not 0 <= c < (1 << self.bpp) for c in idx):
+            raise ValueError('palette index outside pixel bit depth')
         o = self.base + s.off
         if self.bpp == 8:
             self.data[o:o + s.size] = bytes(idx)
@@ -99,7 +113,7 @@ class Pack:
             raw = bytearray(self.raw_len(i))
             for j in range(len(raw)):
                 lo = idx[j * 2] & 15
-                hi = (idx[j * 2 + 1] & 15) if j * 2 + 1 < s.size else 0
+                hi = idx[j * 2 + 1] if j * 2 + 1 < s.size else self.data[o + j] >> 4
                 raw[j] = lo | (hi << 4)
             self.data[o:o + len(raw)] = bytes(raw)
 

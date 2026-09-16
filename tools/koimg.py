@@ -166,7 +166,7 @@ def render_rgba(w, h, text, font_key='B', stroke=2, pad=1, tracking=0,
 def quantize(pack, im, alpha_thr=110, key=0, halo=True):
     """RGBA image -> palette indices for `pack` (index `key` = transparent)."""
     pal = pack.rgb_palette()
-    cand = [c for c in range(len(pal)) if c != key]
+    cand = [c for c in range(1 << pack.bpp) if c != key]
     out = bytearray(im.width * im.height)
     px = im.load()
     cache = {}
@@ -410,7 +410,9 @@ _NEAR = {}
 
 
 def _nearest(pal, col):
-    key = (id(pal), col)
+    # Object ids are recycled after a palette list is freed. A process-wide
+    # cache keyed by id can silently reuse another image's palette indices.
+    key = (tuple(pal), tuple(col))
     c = _NEAR.get(key)
     if c is None:
         best, bd = 0, 1 << 30

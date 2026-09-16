@@ -11,6 +11,7 @@
 !/CHANGELOG.md
 !/release_notes.md
 !/runtime_test.md
+!/IMAGE_VALIDATION.md
 !/requirements.txt
 !/apply_release.py
 !/release_verification.json

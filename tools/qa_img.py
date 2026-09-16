@@ -13,6 +13,9 @@
 """
 import os
 import sys
+import argparse
+import json
+from pathlib import Path
 from collections import defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -57,17 +60,32 @@ def runs(a, b):
 
 
 def main():
-    sheet = None
-    if '--sheet' in sys.argv:
-        sheet = sys.argv[sys.argv.index('--sheet') + 1]
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--sheet')
+    parser.add_argument('--sys',default='D_SYS_ko.BIN')
+    parser.add_argument('--bg',default='D_BG_ko.BIN')
+    parser.add_argument('--report')
+    args=parser.parse_args()
+    sheet=args.sheet
+    if sheet:
         os.makedirs(sheet, exist_ok=True)
     fails = 0
-    for src_path, dst_path in PAIRS:
+    reports=[]
+    from image_safety import validate
+    for src_path, dst_path in [('extract/D_SYS.BIN',args.sys),('extract/D_BG.BIN',args.bg)]:
         if not os.path.exists(dst_path):
-            print(f'== {dst_path}: not built, skipped'); continue
+            print(f'== {dst_path}: missing required candidate'); fails+=1; continue
         src, dst = get_src(src_path), open(dst_path, 'rb').read()
         name = os.path.basename(dst_path)
         print('== %s' % name)
+        try:
+            report=validate(src,dst,Path(src_path).stem)
+            reports.append(report)
+            print('strict scope: all changed bits are inside explicitly approved pixels')
+        except ValueError as exc:
+            print('STRICT FAIL:',exc)
+            fails+=1
+            continue
         print('1 size      : %d vs %d  %s' % (len(src), len(dst),
                                               'OK' if len(src) == len(dst)
                                               else '<< FAIL'))
@@ -146,7 +164,10 @@ def main():
         print()
     print('RESULT: %s' % ('no blocking issues' if not fails
                           else '%d items need attention' % fails))
+    if args.report:
+        Path(args.report).write_text(json.dumps({'failures':fails,'assets':reports},indent=2)+'\n',encoding='utf8')
+    return 1 if fails else 0
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

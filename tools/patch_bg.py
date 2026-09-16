@@ -12,6 +12,9 @@ draws the Korean caption in its place.  The file size never changes.
 import io
 import os
 import sys
+import argparse
+import json
+from pathlib import Path
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from sysimg import Pack, find_packs           # noqa: E402
@@ -125,13 +128,21 @@ def load_src():
 
 
 def main():
-    preview = None
-    if '--preview' in sys.argv:
-        preview = sys.argv[sys.argv.index('--preview') + 1]
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--preview')
+    parser.add_argument('--output',default=DST)
+    parser.add_argument('--images',type=int,nargs='+',choices=sorted(JOBS),default=sorted(JOBS))
+    args=parser.parse_args()
+    preview=args.preview
+    if preview:
         os.makedirs(preview, exist_ok=True)
     buf = load_src()
+    src=bytes(buf)
     offs = find_packs(buf)
-    for k in sorted(JOBS):
+    from image_safety import validate, BG_OFFSETS
+    for k in sorted(args.images):
+        if offs[k] != BG_OFFSETS[k]:
+            raise ValueError('background layout changed')
         p = Pack(buf, offs[k])
         p.data = buf
         for box, txt, style in JOBS[k]:
@@ -144,9 +155,13 @@ def main():
         if preview:
             p.image(0).save(os.path.join(preview, 'bg%03d.png' % k))
         print('bg %3d %#08x  %d captions' % (k, offs[k], len(JOBS[k])))
-    with open(DST, 'wb') as f:
+    report=validate(src,bytes(buf),'D_BG',args.images)
+    if Path(args.output).resolve()==Path(SRC).resolve():
+        raise ValueError('output must not overwrite source')
+    with open(args.output, 'wb') as f:
         f.write(buf)
-    print('wrote', DST, len(buf))
+    Path(args.output+'.audit.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf8')
+    print('wrote', args.output, len(buf),'validated sprites',report['sprites_changed'])
 
 
 if __name__ == '__main__':

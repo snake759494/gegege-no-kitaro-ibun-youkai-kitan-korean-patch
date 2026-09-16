@@ -1,7 +1,7 @@
 {
  "repository": "snake759494/gegege-no-kitaro-ibun-youkai-kitan-korean-patch",
- "tag": "v1.0.2",
- "release_asset": "Kitaro_Ibun_Youkai_Kitan_PS2_KO_v1.0.2.xdelta",
+ "tag": "v1.0.3",
+ "release_asset": "Kitaro_Ibun_Youkai_Kitan_PS2_KO_v1.0.3.xdelta",
  "built": "2026-09-16",
  "source_iso": {
   "name": "Gegege no Kitarou Ibun Youkai Kitan.iso",
@@ -12,38 +12,53 @@
   "sha256": "89ce33d0bf65b33f1fdd9ef3bae28a9700a4b0e700199f73d45633d620ad1186"
  },
  "xdelta": {
-  "md5": "6ff7667a3975b25cadef13c07d40ff7d",
-  "sha1": "6f2c44c3baccce3a883d167ae58c660aab326912",
-  "sha256": "21a7fc0f1a89b0576b6cdfb2135d735f61ffc6fce242d6481bef3abc1b6d696c",
-  "bytes": 413626,
+  "bytes": 664194,
+  "md5": "ab01ff0238f69fe08bd6995f9e97c811",
+  "sha1": "96672d13ed9df2e08ff79c539e6ac7c6d67dad22",
+  "sha256": "0fc656455dbb51761598a81126d0159d92dcc1efdba38cdc5b396ff88c389110",
   "created_with": "xdelta 3.1.0, -e -9"
  },
  "output_iso": {
   "bytes": 2316861440,
-  "md5": "83c1087d4357d20a849550d2390ba46f",
-  "sha1": "4e6da164ba49b6163ac0c7676e2d8a5566334bc5",
-  "sha256": "77cc14cdeea44274e6b6b89e0b37dd0ae11504876561aff510f10d7200b4acf8"
+  "md5": "6037ea3a66f35ee8d01052e6bce3155f",
+  "sha1": "64c3d7a4586c02a60acbf78302ba0ceb0d41ce36",
+  "sha256": "b673e0832b9bd4e23ddf6527b836e8c90bab81e04b05502900bd4b7e6a9a9ca3"
  },
  "xdelta_roundtrip": {
-  "method": "apply_release.py verifies original, patch and decoded output SHA-256",
+  "method": "apply_release.py verified original, patch and decoded output hashes",
   "result": "MATCH",
-  "sha256": "77cc14cdeea44274e6b6b89e0b37dd0ae11504876561aff510f10d7200b4acf8"
+  "sha256": "b673e0832b9bd4e23ddf6527b836e8c90bab81e04b05502900bd4b7e6a9a9ca3"
  },
  "patched_files": {
   "D_MOJI.BIN": {
    "lba": 1899,
    "bytes": 559104,
-   "replacement": "D_MOJI_hangul2350.BIN"
+   "replacement": "D_MOJI_hangul2350.BIN",
+   "sha256": "dcb05b9ab93ab4ff3d794ded8cc80b97a6df6941ebe005d7488b833897c41ca4"
   },
   "D_MESS.BIN": {
    "lba": 2623,
    "bytes": 814667,
-   "replacement": "D_MESS_ko.BIN"
+   "replacement": "D_MESS_ko.BIN",
+   "sha256": "ba601a57d35361d7c11d0c08788d41518b75d0d8c1a10d842859571df7dd4c11"
   },
   "D_CHFONT.BIN": {
    "lba": 85908,
    "bytes": 524288,
-   "replacement": "D_CHFONT_ko.BIN"
+   "replacement": "D_CHFONT_ko.BIN",
+   "sha256": "54afa52bd29b1f95a30bdac2f3d20a8c9739aa81fd5fc65b711ccff3909b7f1c"
+  },
+  "D_SYS.BIN": {
+   "lba": 3021,
+   "bytes": 6770688,
+   "replacement": "validation_20260916/D_SYS_candidate.BIN",
+   "sha256": "0aed6abe18f8a7406865d74a364d7c5cbab9e086512a5dfd1c99e8c7564d65c0"
+  },
+  "D_BG.BIN": {
+   "lba": 56654,
+   "bytes": 47686680,
+   "replacement": "validation_20260916/D_BG_candidate.BIN",
+   "sha256": "9ed9867866dc3eabf40c653729e8a74b175f4e08f0622514d7f6254ea8e495fa"
   }
  },
  "rebuild": {
@@ -67,7 +82,7 @@
    }
   },
   "all_match": true,
-  "note": "Historical source rebuild verification; these three payloads are unchanged in v1.0.2."
+  "note": "Historical source rebuild verification; these three text/font/nameplate payloads remain unchanged in v1.0.3. New image checks are recorded separately."
  },
  "qa_text": {
   "tool": "tools/qa_text.py",
@@ -83,13 +98,35 @@
   "date": "2026-09-16"
  },
  "qa_img": {
-  "tool": "tools/qa_img.py",
-  "result": "RESULT: no blocking issues",
-  "summary": {
-   "D_SYS_ko.BIN": "51 packs, 99 sprites rewritten; header/table/palette untouched",
-   "D_BG.BIN": "not patched since v1.0.1"
-  },
-  "note": "Historical validation of excluded UI assets, not a v1.0.2 release check."
+  "tool": "tools/qa_img.py + tools/test_image_safety.py",
+  "date": "2026-09-16",
+  "failures": 0,
+  "regression_tests_passed": 11,
+  "assets": [
+   {
+    "kind": "D_SYS",
+    "source_sha256": "63ecd2da54c2a413aa95a1a9ee7def98fed86aee365710cb76971b8bf51f5f67",
+    "output_sha256": "0aed6abe18f8a7406865d74a364d7c5cbab9e086512a5dfd1c99e8c7564d65c0",
+    "bytes": 6770688,
+    "changed_bytes": 429349,
+    "containers_checked": 70,
+    "sprites_changed": 99,
+    "outside_approved_pixels": 0,
+    "runtime_status": "not established by static validation"
+   },
+   {
+    "kind": "D_BG",
+    "source_sha256": "db4b16fbef921566721bae959c00eef00c1131641b0c643ef3cb41823726a040",
+    "output_sha256": "9ed9867866dc3eabf40c653729e8a74b175f4e08f0622514d7f6254ea8e495fa",
+    "bytes": 47686680,
+    "changed_bytes": 179786,
+    "containers_checked": 176,
+    "sprites_changed": 9,
+    "outside_approved_pixels": 0,
+    "runtime_status": "not established by static validation"
+   }
+  ],
+  "BG_repeat_sha256": "9ed9867866dc3eabf40c653729e8a74b175f4e08f0622514d7f6254ea8e495fa"
  },
  "proofread": {
   "date": "2026-09-10",
@@ -98,11 +135,14 @@
  },
  "emulator": {
   "version": "PCSX2 v2.9.52",
-  "note": "Direction input produced rotation/movement; user confirmed progress beyond the reported point. Automatic circle input was disabled. This does not isolate D_SYS as a cause or verify full completion. See runtime_test.md."
+  "automated_scope": "Cold boot/new game through hospital exploration; native controller macro movement and rotation observed. No code/script writes.",
+  "user_confirmation": "User confirmed proper progress with the UI candidate and explicitly requested release.",
+  "limitations": "Root cause of the earlier freeze remains unconfirmed. Controlled four-configuration comparison, all image/menu runtime coverage, full game completion and real hardware remain unverified.",
+  "record": "runtime_test.md; IMAGE_VALIDATION.md"
  },
  "v1.0.1_fix": {
   "report": "game stops after opening a door in the prologue exploration room (no dialogue on screen)",
-  "bisect": "D_MESS restored (A): not tested; D_SYS+D_BG restored (B): OK; D_BG restored only (C): OK -> D_BG_ko.BIN is the cause",
+  "bisect": "Historical, uncontrolled reports: SYS+BG original and BG original configurations progressed. This did not establish D_BG as a cause; earlier definitive attribution is withdrawn.",
   "action": "D_BG.BIN left original; all 9 patched menu backgrounds dropped",
   "v1.0.0_output_sha256": "5f6fee80422be8ce602658b9dbce384240e932451caded9853bdac16d514b208"
  },
@@ -112,5 +152,45 @@
   "D_SYS": "original",
   "D_BG": "original",
   "executable": "original"
+ },
+ "iso_scope": {
+  "source_sha256": "89ce33d0bf65b33f1fdd9ef3bae28a9700a4b0e700199f73d45633d620ad1186",
+  "output_sha256": "b673e0832b9bd4e23ddf6527b836e8c90bab81e04b05502900bd4b7e6a9a9ca3",
+  "outside_replacement_ranges": 0,
+  "files": {
+   "D_MOJI.BIN": {
+    "offset": 3889152,
+    "bytes": 559104,
+    "sha256": "dcb05b9ab93ab4ff3d794ded8cc80b97a6df6941ebe005d7488b833897c41ca4"
+   },
+   "D_MESS.BIN": {
+    "offset": 5371904,
+    "bytes": 814667,
+    "sha256": "ba601a57d35361d7c11d0c08788d41518b75d0d8c1a10d842859571df7dd4c11"
+   },
+   "D_SYS.BIN": {
+    "offset": 6187008,
+    "bytes": 6770688,
+    "sha256": "0aed6abe18f8a7406865d74a364d7c5cbab9e086512a5dfd1c99e8c7564d65c0"
+   },
+   "D_BG.BIN": {
+    "offset": 116027392,
+    "bytes": 47686680,
+    "sha256": "9ed9867866dc3eabf40c653729e8a74b175f4e08f0622514d7f6254ea8e495fa"
+   },
+   "D_CHFONT.BIN": {
+    "offset": 175939584,
+    "bytes": 524288,
+    "sha256": "54afa52bd29b1f95a30bdac2f3d20a8c9739aa81fd5fc65b711ccff3909b7f1c"
+   }
+  }
+ },
+ "v1.0.3_configuration": {
+  "tested_iso": "Kitaro_KR_UI_candidate_20260916.iso",
+  "only_expected_five_files_changed": true,
+  "D_SYS": "99 approved sprites",
+  "D_BG": "9 approved menu backgrounds",
+  "executable": "original",
+  "user_authorized_release": true
  }
 }

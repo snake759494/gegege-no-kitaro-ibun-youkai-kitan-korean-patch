@@ -10,6 +10,9 @@ D_SYS_ko.BIN into the project root.
 """
 import os
 import sys
+import argparse
+import json
+from pathlib import Path
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from sysimg import Pack                      # noqa: E402
@@ -237,19 +240,28 @@ def do_places(buf, preview):
 
 
 def main():
-    preview = None
-    if '--preview' in sys.argv:
-        preview = sys.argv[sys.argv.index('--preview') + 1]
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--preview')
+    parser.add_argument('--output',default=DST)
+    parser.add_argument('--groups',nargs='+',choices=['ui','chapters','web','shop','places'],
+                        default=['ui','chapters','web','shop','places'])
+    args=parser.parse_args()
+    preview=args.preview
+    if preview:
         os.makedirs(preview, exist_ok=True)
-    buf = bytearray(open(SRC, 'rb').read())
-    do_ui(buf, preview)
-    do_chapters(buf, preview)
-    do_web(buf, preview)
-    do_shop(buf, preview)
-    do_places(buf, preview)
-    with open(DST, 'wb') as f:
+    src=Path(SRC).read_bytes()
+    buf=bytearray(src)
+    actions={'ui':do_ui,'chapters':do_chapters,'web':do_web,'shop':do_shop,'places':do_places}
+    for group in args.groups:
+        actions[group](buf,preview)
+    from image_safety import validate
+    report=validate(src,bytes(buf),'D_SYS',args.groups)
+    if Path(args.output).resolve()==Path(SRC).resolve():
+        raise ValueError('output must not overwrite source')
+    with open(args.output, 'wb') as f:
         f.write(buf)
-    print('wrote', DST, len(buf))
+    Path(args.output+'.audit.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf8')
+    print('wrote', args.output, len(buf),'validated sprites',report['sprites_changed'])
 
 
 if __name__ == '__main__':
