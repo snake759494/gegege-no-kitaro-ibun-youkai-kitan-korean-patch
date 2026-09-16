@@ -1,4 +1,4 @@
-"""Apply the Kitaro Ibun Youkai Kitan PS2 Korean patch v1.0.1 with input, patch and output hash verification."""
+"""Apply the Kitaro Ibun Youkai Kitan PS2 Korean patch v1.0.2 with input, patch and output hash verification."""
 import argparse
 import hashlib
 from pathlib import Path
@@ -8,8 +8,8 @@ import sys
 SOURCE_SIZE = 2316861440
 SOURCE_MD5 = 'a3ba2caa94c05e13aa0191f6850367b8'
 SOURCE_SHA = '89ce33d0bf65b33f1fdd9ef3bae28a9700a4b0e700199f73d45633d620ad1186'
-PATCH_SHA = '5109d081f24c7f042308afd13b8e6be5b811064208135c94d7f7632a2c4a17ed'
-OUTPUT_SHA = 'f3d7ba5be2e2718156eb09fa7a575453c829b2da9760b7a11d9ef2a08b3db3c9'
+PATCH_SHA = '21a7fc0f1a89b0576b6cdfb2135d735f61ffc6fce242d6481bef3abc1b6d696c'
+OUTPUT_SHA = '77cc14cdeea44274e6b6b89e0b37dd0ae11504876561aff510f10d7200b4acf8'
 
 def digest(path, kind='sha256'):
     h = hashlib.new(kind)

@@ -1,7 +1,7 @@
 {
  "repository": "snake759494/gegege-no-kitaro-ibun-youkai-kitan-korean-patch",
- "tag": "v1.0.1",
- "release_asset": "Kitaro_Ibun_Youkai_Kitan_PS2_KO_v1.0.1.xdelta",
+ "tag": "v1.0.2",
+ "release_asset": "Kitaro_Ibun_Youkai_Kitan_PS2_KO_v1.0.2.xdelta",
  "files": {
   ".gitattributes": {
    "bytes": 8,
@@ -12,12 +12,12 @@
    "sha256": "d25b01bc48e76066b14fa639bff60a2afea2f9c5fca6389a50a2ae9f8e7d7e47"
   },
   "BUILD.md": {
-   "bytes": 5125,
-   "sha256": "67956e47850500576817a749a1976f24c4f6ab21802e6dafce05dbc64d7275ff"
+   "bytes": 5279,
+   "sha256": "2c3c5ec36deebf36314ca2095f746f4d2fd014fc6ac677e2463967674a7016a5"
   },
   "CHANGELOG.md": {
-   "bytes": 1213,
-   "sha256": "e8e743e32ae0b8bbbea3d257212c2605489a4be556cb95b0adfe636a0028fe3c"
+   "bytes": 1784,
+   "sha256": "abd8be69fe6edd04731c6732b5807155ea2e157e07c037914e9ea865211f4f4e"
   },
   "D_MOJI_hangul2350.map.tsv": {
    "bytes": 44678,
@@ -28,8 +28,8 @@
    "sha256": "dd2726861dd6582703b3e9f356c68597f85692e4c8257b4333990aeeb43cc2e3"
   },
   "README.md": {
-   "bytes": 9524,
-   "sha256": "3ddbd89afca81d35e72bb5a2364a882a930adfaeaff70ffa698d929a97c94547"
+   "bytes": 8819,
+   "sha256": "04cdb94e32c706ba2afae753773970f21fee4778d08f4a98fbf8eb027cb8c3d7"
   },
   "REVIEW.md": {
    "bytes": 7009,
@@ -40,12 +40,12 @@
    "sha256": "0fa5cf24d606f5d3ea251c729f1e220f1e494757d60d0979eba45f211f8fad4c"
   },
   "TECHNICAL.md": {
-   "bytes": 9415,
-   "sha256": "7f3cfc8cd79af01c3edb7dedc41055e2a6e915451bb63bbfe1c2f91d65171029"
+   "bytes": 9599,
+   "sha256": "51a9edda2c1d1872aab37cc7d33a39fd17f3afdcbade896d22e73777517786c2"
   },
   "apply_release.py": {
    "bytes": 2227,
-   "sha256": "db0ba92cd015f3ebf18d767214600e908e6384230be159e1a19967092de5cd6b"
+   "sha256": "4b0065867ad03ba823d82b099797ad5376ccd4ae854173e4ac2297828c3251b8"
   },
   "glyph_map.json": {
    "bytes": 39143,
@@ -60,20 +60,20 @@
    "sha256": "3cfdba36aac15d62814338a31444f289c41128e45687b7582d6e780133cf6db5"
   },
   "release_notes.md": {
-   "bytes": 2633,
-   "sha256": "11c7ad7936ac8247db710e02f38655b3892558df7d42812eb3993ee9be3babde"
+   "bytes": 2100,
+   "sha256": "950f48512e6358201b101ef79d517952e7a28b172572648e3e03d7b3351131e1"
   },
   "release_verification.json": {
-   "bytes": 4136,
-   "sha256": "c33c8f081ef7659e1620cb6df603fe2fe7590dfbc4535d9b1835ab2dc6998aa1"
+   "bytes": 4341,
+   "sha256": "62194067ba03e3684dc94ef05eb28371e3f82c939a4bb48de7ef960ca93d9232"
   },
   "requirements.txt": {
    "bytes": 44,
    "sha256": "8c18d9416d2a30775cfbe4fc7fabdf6595a0b0f953a72ff2f2965cb34c1cba58"
   },
   "runtime_test.md": {
-   "bytes": 3781,
-   "sha256": "6cb7793d77aa85e5274408b3c3ad06f5c69ffc2c10636e476e3f667022358ce8"
+   "bytes": 5287,
+   "sha256": "3cd86d477702b9224952277631e1b2a3a7ba268b62a315e808b7fd008fbbd806"
   },
   "script_jp.tsv": {
    "bytes": 1147342,

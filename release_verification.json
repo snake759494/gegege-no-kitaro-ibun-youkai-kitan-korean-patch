@@ -1,8 +1,8 @@
 {
  "repository": "snake759494/gegege-no-kitaro-ibun-youkai-kitan-korean-patch",
- "tag": "v1.0.1",
- "release_asset": "Kitaro_Ibun_Youkai_Kitan_PS2_KO_v1.0.1.xdelta",
- "built": "2026-09-15",
+ "tag": "v1.0.2",
+ "release_asset": "Kitaro_Ibun_Youkai_Kitan_PS2_KO_v1.0.2.xdelta",
+ "built": "2026-09-16",
  "source_iso": {
   "name": "Gegege no Kitarou Ibun Youkai Kitan.iso",
   "product": "SLPM-65337",
@@ -12,22 +12,22 @@
   "sha256": "89ce33d0bf65b33f1fdd9ef3bae28a9700a4b0e700199f73d45633d620ad1186"
  },
  "xdelta": {
-  "bytes": 607869,
-  "md5": "5b5364593b1fa008911c9e29d8b2607c",
-  "sha1": "7068e3b6b597a86d9af692b869cf05dd2e93b333",
-  "sha256": "5109d081f24c7f042308afd13b8e6be5b811064208135c94d7f7632a2c4a17ed",
+  "md5": "6ff7667a3975b25cadef13c07d40ff7d",
+  "sha1": "6f2c44c3baccce3a883d167ae58c660aab326912",
+  "sha256": "21a7fc0f1a89b0576b6cdfb2135d735f61ffc6fce242d6481bef3abc1b6d696c",
+  "bytes": 413626,
   "created_with": "xdelta 3.1.0, -e -9"
  },
  "output_iso": {
   "bytes": 2316861440,
-  "md5": "2cb727da57cf20b51f18bb6e8663f21c",
-  "sha1": "e9578650d14d45c8aa495aa6e051beec510e2810",
-  "sha256": "f3d7ba5be2e2718156eb09fa7a575453c829b2da9760b7a11d9ef2a08b3db3c9"
+  "md5": "83c1087d4357d20a849550d2390ba46f",
+  "sha1": "4e6da164ba49b6163ac0c7676e2d8a5566334bc5",
+  "sha256": "77cc14cdeea44274e6b6b89e0b37dd0ae11504876561aff510f10d7200b4acf8"
  },
  "xdelta_roundtrip": {
-  "method": "xdelta -d -f -s <source> <patch> -> scratch ISO, sha1 compared with the built ISO",
+  "method": "apply_release.py verifies original, patch and decoded output SHA-256",
   "result": "MATCH",
-  "sha1": "e9578650d14d45c8aa495aa6e051beec510e2810"
+  "sha256": "77cc14cdeea44274e6b6b89e0b37dd0ae11504876561aff510f10d7200b4acf8"
  },
  "patched_files": {
   "D_MOJI.BIN": {
@@ -39,11 +39,6 @@
    "lba": 2623,
    "bytes": 814667,
    "replacement": "D_MESS_ko.BIN"
-  },
-  "D_SYS.BIN": {
-   "lba": 3021,
-   "bytes": 6770688,
-   "replacement": "D_SYS_ko.BIN"
   },
   "D_CHFONT.BIN": {
    "lba": 85908,
@@ -69,14 +64,10 @@
     "rebuilt_sha256": "ba601a57d35361d7c11d0c08788d41518b75d0d8c1a10d842859571df7dd4c11",
     "shipped_sha256": "ba601a57d35361d7c11d0c08788d41518b75d0d8c1a10d842859571df7dd4c11",
     "match": true
-   },
-   "D_SYS_ko.BIN": {
-    "rebuilt_sha256": "0aed6abe18f8a7406865d74a364d7c5cbab9e086512a5dfd1c99e8c7564d65c0",
-    "shipped_sha256": "0aed6abe18f8a7406865d74a364d7c5cbab9e086512a5dfd1c99e8c7564d65c0",
-    "match": true
    }
   },
-  "all_match": true
+  "all_match": true,
+  "note": "Historical source rebuild verification; these three payloads are unchanged in v1.0.2."
  },
  "qa_text": {
   "tool": "tools/qa_text.py",
@@ -88,7 +79,8 @@
    "leftover_kana_kanji": 0,
    "over_line_limit": 0,
    "max_subfile_budget": "97% (0x71000)"
-  }
+  },
+  "date": "2026-09-16"
  },
  "qa_img": {
   "tool": "tools/qa_img.py",
@@ -96,7 +88,8 @@
   "summary": {
    "D_SYS_ko.BIN": "51 packs, 99 sprites rewritten; header/table/palette untouched",
    "D_BG.BIN": "not patched since v1.0.1"
-  }
+  },
+  "note": "Historical validation of excluded UI assets, not a v1.0.2 release check."
  },
  "proofread": {
   "date": "2026-09-10",
@@ -104,12 +97,20 @@
   "record": "REVIEW.md"
  },
  "emulator": {
-  "note": "See runtime_test.md. The final build was handed to the user for PCSX2 verification; no in-game result of the final build is recorded here."
+  "version": "PCSX2 v2.9.52",
+  "note": "Direction input produced rotation/movement; user confirmed progress beyond the reported point. Automatic circle input was disabled. This does not isolate D_SYS as a cause or verify full completion. See runtime_test.md."
  },
  "v1.0.1_fix": {
   "report": "game stops after opening a door in the prologue exploration room (no dialogue on screen)",
   "bisect": "D_MESS restored (A): not tested; D_SYS+D_BG restored (B): OK; D_BG restored only (C): OK -> D_BG_ko.BIN is the cause",
   "action": "D_BG.BIN left original; all 9 patched menu backgrounds dropped",
   "v1.0.0_output_sha256": "5f6fee80422be8ce602658b9dbce384240e932451caded9853bdac16d514b208"
+ },
+ "v1.0.2_configuration": {
+  "tested_iso": "Kitaro_DIAG_SYS.iso",
+  "only_expected_three_files_changed": true,
+  "D_SYS": "original",
+  "D_BG": "original",
+  "executable": "original"
  }
 }
